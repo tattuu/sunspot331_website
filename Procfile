@@ -1,1 +1,1 @@
-web: gunicorn space_post
+web: gunicorn space_post.wsgi
