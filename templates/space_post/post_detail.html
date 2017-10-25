@@ -1,0 +1,39 @@
+{% extends 'space_post/base.html' %}
+{% load static %}
+{% block content %}
+     <div id="article">
+        <div id="not_footer">
+            <div id="article_header">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <div id="article_title">
+                <a href="{% url 'post_detail'  pk=post.pk %}">{{ post.title }}</a>
+                <hr>
+            </div>
+            <div id="article_contents">
+                <img src="{{ post.image.url }}"/>
+                {% if post.title|length <= 28 %}
+                    <div id="article_text1" >
+                        {{ post.text|linebreaks }}
+                    </div>
+                {% else %}
+                    <div id="article_text2">
+                        {{ post.text|linebreaks }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div id="article_footer">
+            <table >
+            <tr>
+                <td><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://sunspot331.herokuapp.com" data-lang="ja">ツイート</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js" charset="UTF-8"></script></td>
+                <td><div class="fb-share-button" data-href="https://sunspot331.herokuapp.com" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunspot331.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div></td>
+                <td><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></td>
+                <td class="article_footer_under"><script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: ja_JP</script><script type="IN/Share" data-url="https://sunspot331.herokuapp.com/"></script></td>
+            </tr>
+            </table>
+            <a href="/"><img src="{% static 'media/next_button.png' %}" width="100px" height="50px"/></a>
+        </div>
+        <div class="clear"></div>
+     </div>
+{% endblock %}

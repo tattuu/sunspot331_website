@@ -119,7 +119,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
@@ -128,7 +128,7 @@ ECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
 
 DEBUG = False
 
@@ -136,3 +136,11 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/pics/'
+MEDIA_ROOT = BASE_DIR
+
+STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
+    os.path.join(BASE_DIR, "static"),
+)
