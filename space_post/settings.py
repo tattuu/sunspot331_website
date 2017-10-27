@@ -130,7 +130,7 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
 
-DEBUG = False
+DEBUG = True
 
 try:
     from .local_settings import *
@@ -139,9 +139,7 @@ except ImportError:
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/pics/'
-MEDIA_ROOT = (
-    os.path.join(BASE_DIR, 'static')
-)
+MEDIA_ROOT = BASE_DIR
 
 STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
     os.path.join(BASE_DIR, "static"),
