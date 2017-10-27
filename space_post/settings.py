@@ -130,7 +130,7 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
 
-DEBUG = True # これをTrueにすると、デプロイした先でも画像へのパスが通り、後悔したWebサイト上で画像が表示されるようになった。
+DEBUG = True # これをTrueにすると、デプロイした先でも画像へのパスが通り、後悔したWebサイト上で画像が表示されるようになった。だがセキュリティ的には良くない。
 
 try:
     from .local_settings import *
