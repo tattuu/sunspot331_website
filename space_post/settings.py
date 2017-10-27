@@ -130,7 +130,7 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
 
-DEBUG = True
+DEBUG = False # これをTrueにすると、デプロイした先でも画像へのパスが通り、後悔したWebサイト上で画像が表示されるようになった。
 
 try:
     from .local_settings import *
@@ -143,4 +143,10 @@ MEDIA_ROOT = BASE_DIR
 
 STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
     os.path.join(BASE_DIR, "static"),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
