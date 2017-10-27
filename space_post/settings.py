@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1+ny(o1%@1tlab5&!i)ilpgx3m40^7y*&p)uh+gb2$y3b8f_!f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -131,7 +131,7 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
 from django.conf import settings
 from django.views.static import serve
-DEBUG = True
+DEBUG = False
 
 try:
     from .local_settings import *
@@ -145,12 +145,3 @@ MEDIA_ROOT = BASE_DIR
 STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
     os.path.join(BASE_DIR, "static"),
 )
-
-from django.conf.urls import url
-
-if settings.DEBUG:
-    urlpatterns = [
-        url(r'^media/(?P<path>.*)$', serve, {
-            'document_root': settings.MEDIA_ROOT,
-        }),
-    ]
