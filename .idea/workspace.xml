@@ -14,21 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/space_post/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="130" column="24" lean-forward="false" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="337">
+              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -165,6 +155,17 @@
               <item name="space_post" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="space_post" type="b2602c69:ProjectViewProjectNode" />
+              <item name="space_post" type="462c0819:PsiDirectoryNode" />
+              <item name="staticfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="space_post" type="b2602c69:ProjectViewProjectNode" />
+              <item name="space_post" type="462c0819:PsiDirectoryNode" />
+              <item name="staticfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="staticfiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="space_post" type="b2602c69:ProjectViewProjectNode" />
@@ -602,14 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/space_post/post_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-241">
@@ -664,18 +657,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/space_post/settings.py">
+    <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="130" column="24" lean-forward="false" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/space_post/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
         </state>
       </provider>

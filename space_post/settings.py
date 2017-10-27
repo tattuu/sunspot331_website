@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1+ny(o1%@1tlab5&!i)ilpgx3m40^7y*&p)uh+gb2$y3b8f_!f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -130,8 +130,8 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
 
-DEBUG = False # これをTrueにすると、デプロイした先でも画像へのパスが通り、後悔したWebサイト上で画像が表示されるようになった。
-TEMPLATE_DEBUG = False
+DEBUG = True # これをTrueにすると、デプロイした先でも画像へのパスが通り、後悔したWebサイト上で画像が表示されるようになった。
+
 try:
     from .local_settings import *
 except ImportError:
@@ -145,8 +145,3 @@ STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
     os.path.join(BASE_DIR, "static"),
 )
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
