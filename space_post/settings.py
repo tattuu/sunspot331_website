@@ -137,10 +137,11 @@ try:
 except ImportError:
     pass
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
 MEDIA_URL = '/pics/'
-MEDIA_ROOT = BASE_DIR
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, 'static')
+)
 
 STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
     os.path.join(BASE_DIR, "static"),
