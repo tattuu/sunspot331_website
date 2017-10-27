@@ -130,7 +130,7 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
 
-DEBUG = True # これをTrueにすると、デプロイした先でも画像へのパスが通り、後悔したWebサイト上で画像が表示されるようになった。だがセキュリティ的には良くない。
+DEBUG = True
 
 try:
     from .local_settings import *
@@ -144,4 +144,3 @@ MEDIA_ROOT = BASE_DIR
 STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
     os.path.join(BASE_DIR, "static"),
 )
-
