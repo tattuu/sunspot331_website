@@ -4,7 +4,7 @@
      <div id="article">
         <div id="not_footer">
             <div id="article_header">
-                <p>published: {{ post.published_date }}</p>
+                 <p>published: {{ post.published_date }}<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a></p>
             </div>
             <div id="article_title">
                 <a href="{% url 'post_detail'  pk=post.pk %}">{{ post.title }}</a>
@@ -36,4 +36,23 @@
         </div>
         <div class="clear"></div>
      </div>
+    <hr>
+    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+
+    {% for comment in post.comments.all %}
+        {% if user.is_authenticated or comment.approved_comment %}
+        <div class="comment">
+            <div class="date">
+                {{ comment.created_date }}<<strong>{{ comment.author }}</strong>>
+                {% if not comment.approved_comment %}
+                    <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                {% endif %}
+            </div>
+            <p>{{ comment.text|linebreaks }}</p>
+        </div>
+        {% endif %}
+    {% empty %}
+        <p>まだコメントがありません。</p>
+    {% endfor %}
 {% endblock %}

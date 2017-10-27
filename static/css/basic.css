@@ -1,3 +1,6 @@
+#header a {
+    text-decoration: none;
+}
 body {
     width: 950px;
 }
@@ -45,7 +48,12 @@ body {
 }
 
 #article_header{
+    margin-right: 90px;
     padding-left: 13px;
+}
+
+#article_header > p > a{
+    margin-left: 190px;
 }
 
 #article_title{
@@ -139,4 +147,8 @@ body {
     width: auto;
     height: 100px;
     background-color: #777777;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
 }

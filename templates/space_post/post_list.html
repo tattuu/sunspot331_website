@@ -5,7 +5,7 @@
         <div id="article">
             <div id="not_footer">
                 <div id="article_header">
-                    <p>published: {{ post.published_date }}</p>
+                    <p>published: {{ post.published_date }}<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a></p>
                 </div>
                 <div id="article_title">
                     <a href="{% url 'post_detail'  pk=post.pk %}">{{ post.title }}</a>
@@ -33,7 +33,7 @@
                     <td class="article_footer_under"><script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: ja_JP</script><script type="IN/Share" data-url="https://sunspot331.herokuapp.com/"></script></td>
                 </tr>
                 </table>
-                <a href="/"><img src="{% static 'media/next_button.png' %}" width="100px" height="50px"/></a>
+                <a href="{% url 'post_detail'  pk=post.pk %}"><img src="{% static 'media/next_button.png' %}" width="100px" height="50px"/></a>
             </div>
             <div class="clear"></div>
         </div>
