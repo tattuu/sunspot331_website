@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+     <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="icon" href="{% static 'media/favicon.ico' %}" type="image/x-icon" />
+        <script type="text/javascript" src="{% static 'js/article_text_line_judge.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+        <title>Sunspot331</title>
+    </head>
+    <body>
+        <div id="fb-root"></div> <!-- facebookの共有ボタンのためのおまじない -->
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10';
+            fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header"> <!-- ヘッダー部分 -->
+            <div id="header_title">
+                <a href="/">Sunspot331</a> <!-- サンスポット(黒点) -->
+            </div>
+        </div>
+         <div id="contents">
+            <div id="right_side_bar">
+            </div>
+            <div id="article_block">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <div id="footer">
+
+        </div>
+    </body>
+</html>
