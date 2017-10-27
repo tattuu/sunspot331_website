@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ba7ed78-ec3b-4b88-bbd7-21867e612e8b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tatsuyoshi.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/space_post/settings.py" afterPath="$PROJECT_DIR$/space_post/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/space_post/base.html" afterPath="$PROJECT_DIR$/templates/space_post/base.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,21 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_comment_to_post.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_comment_to_post.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/space_post/add_comment_to_post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+            <state relative-caret-position="136">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/space_post/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="68">
+              <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -136,12 +137,12 @@
         <option value="$PROJECT_DIR$/templates/space_post/add_comment_to_post.html" />
         <option value="$PROJECT_DIR$/templates/space_post/post_edit.html" />
         <option value="$PROJECT_DIR$/space_post_app/forms.py" />
-        <option value="$PROJECT_DIR$/templates/space_post/base.html" />
         <option value="$PROJECT_DIR$/space_post_app/views.py" />
         <option value="$PROJECT_DIR$/space_post_app/urls.py" />
         <option value="$PROJECT_DIR$/templates/space_post/post_detail.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/space_post/settings.py" />
+        <option value="$PROJECT_DIR$/templates/space_post/base.html" />
       </list>
     </option>
   </component>
@@ -675,7 +676,7 @@
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#227#236#0" expanded="true" />
+            <element signature="e#227#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -704,14 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/space_post/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/space_post/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -732,8 +725,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/space_post/add_comment_to_post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+        <state relative-caret-position="136">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/space_post/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
         </state>
       </provider>
