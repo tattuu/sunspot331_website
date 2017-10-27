@@ -129,7 +129,8 @@ ECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles' # Apacheなどの本番環境のサーバが見る静的ファイルのパス
-
+from django.conf import settings
+from django.views.static import serve
 DEBUG = True
 
 try:
@@ -144,3 +145,12 @@ MEDIA_ROOT = BASE_DIR
 STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス
     os.path.join(BASE_DIR, "static"),
 )
+
+from django.conf.urls import url
+
+if settings.DEBUG:
+    urlpatterns = [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]
