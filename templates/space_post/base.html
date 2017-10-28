@@ -37,14 +37,21 @@
         </div>
          <div id="contents">
             <div id="right_side_bar">
+                   <p>過去一週間の人気ページ</p>
+            {% for popular in popular_post_list %}
+            <p>
+                <a href="{{ popular.url }}">{{ popular.title }}</a>
+                - {{ popular.page_view }}View
+            </p>
+            <hr>
+            {% endfor %}
             </div>
             <div id="article_block">
                 {% block content %}
                 {% endblock %}
             </div>
         </div>
-        <div id="footer">
-
+        <div id="footer"
         </div>
     </body>
 </html>

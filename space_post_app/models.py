@@ -34,3 +34,15 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class PopularPost(models.Model):
+    """人気記事のモデル"""
+
+    title = models.CharField(max_length=100)
+    url = models.CharField('URL', max_length=255)
+    page_view = models.IntegerField('ページビュー数')
+
+    def __str__(self):
+        return '{0} - {1} - {2}'.format(
+            self.url, self.title, self.page_view)
