@@ -75,6 +75,7 @@ def get_10_popular():
     response = get_report(analytics)
     for report in response.get('reports', []):
         rows = report.get('data', {}).get('rows', [])
+        print(rows)
         for row in rows:
             url = row['dimensions'][0]
             title = row['dimensions'][1]
