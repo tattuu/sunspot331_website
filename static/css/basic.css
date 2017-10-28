@@ -135,8 +135,23 @@ body {
     width: 300px;
     height:2990px;
     margin-right: 17px;
-    background-color: #a41515;
+    background-color: #f0f8ff;
     float: right;
+}
+
+#popular_post{
+    text-align: center;
+}
+
+#popular_post > hr{
+    height: 2px;
+    border: none;
+    background-color: #000000;
+}
+
+#hr_length{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .clear{

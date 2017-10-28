@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Article, Comment
+from .models import Article, Comment, PopularPost
 from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 
 
 def post_list(request):
     posts = Article.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'space_post/post_list.html', {'posts': posts})
+    popular_post_list = PopularPost.objects.all()
+    return render(request, 'space_post/post_list.html', {'popular_post_list': popular_post_list, 'posts': posts})
 
 
 def post_detail(request, pk):
