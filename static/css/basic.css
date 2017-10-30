@@ -1,6 +1,7 @@
 #header a {
     text-decoration: none;
 }
+
 body {
     width: 950px;
 }
@@ -139,7 +140,7 @@ body {
     float: right;
 }
 
-#popular_post{
+.popular_post_and_category{
     text-align: center;
 }
 
@@ -149,15 +150,71 @@ body {
     color: #4d4d4f;
 }
 
-#popular_post > hr{
+.sidebar_hr_size{
+    height: 5px;
+    border: none;
+    background-color: #000000;
+}
+
+
+#popular_hr{
+    margin-left: 20px;
+    margin-right: 20px;
     height: 2px;
     border: none;
     background-color: #000000;
 }
 
-#hr_length{
-    margin-left: 20px;
-    margin-right: 20px;
+#category{
+    font-size: 28px;
+}
+
+#link_underbar_delete > a{
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.square_btn {
+    width: 150px;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px 11px 5px 15px;
+    text-decoration: none;
+    color: #00bfff;
+    transition: .4s;
+}
+
+.square_btn:before {
+   position: absolute;
+   display: inline-block;
+   content: '';
+   width: 4px;
+   height: 100%;
+   top: 0;
+   left: 0;
+   border-radius: 3px;
+   background:#191970;
+
+}
+
+.square_btn:after{
+   position: absolute;
+   display: inline-block;
+   content: '';
+   width: 4px;
+   height: 100%;
+   top:0;
+   left: 100%;
+   border-radius: 3px;
+   background:#191970;
+}
+
+.square_btn:hover:before,.square_btn:hover:after{
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
 }
 
 .clear{

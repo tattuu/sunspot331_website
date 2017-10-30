@@ -11,7 +11,7 @@ def category(request, pk):
     categorys = Category.objects.all()
     posts = Article.objects.filter(category__name__contains=pk_category).filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'space_post/post_category.html',
-                  {'posts': posts, 'popular_post_list': popular_post_list, 'categorys': categorys})
+                  {'posts': posts, 'popular_post_list': popular_post_list, 'categorys': categorys, 'pk_category': pk_category})
 
 
 def post_list(request):
