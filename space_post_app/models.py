@@ -10,7 +10,7 @@ class Category(models.Model):
 
 
 class Article(models.Model):
-    category = models.ForeignKey('Category', related_name='categorys', default=1)
+    category = models.ForeignKey('Category', related_name='categorys', default='57df9419_fk_space_pos')
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/media/')
