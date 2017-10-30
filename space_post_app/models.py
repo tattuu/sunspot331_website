@@ -2,7 +2,15 @@ from django.db import models
 from django.utils import timezone
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class Article(models.Model):
+    category = models.ForeignKey('Category', related_name='categorys', default="宇宙")
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/media/')
@@ -22,7 +30,7 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey('space_post_app.Article', related_name='comments')
+    post = models.ForeignKey('Article', related_name='comments')
     author = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)

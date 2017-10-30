@@ -1,24 +1,40 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Article, Comment, PopularPost
+from .models import Article, Comment, PopularPost, Category
 from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
+
+
+def category(request, pk):
+    pk_category = get_object_or_404(Category, pk=pk)
+    popular_post_list = PopularPost.objects.all()
+    categorys = Category.objects.all()
+    posts = Article.objects.filter(category__name__contains=pk_category).filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'space_post/post_category.html',
+                  {'posts': posts, 'popular_post_list': popular_post_list, 'categorys': categorys})
 
 
 def post_list(request):
     posts = Article.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     popular_post_list = PopularPost.objects.all()
-    return render(request, 'space_post/post_list.html', {'popular_post_list': popular_post_list, 'posts': posts})
+    categorys = Category.objects.all()
+    return render(request, 'space_post/post_list.html',
+                  {'posts': posts, 'popular_post_list': popular_post_list, 'categorys': categorys})
 
 
 def post_detail(request, pk):
     post = get_object_or_404(Article, pk=pk)
-    return render(request, 'space_post/post_detail.html', {'post': post})
+    popular_post_list = PopularPost.objects.all()
+    categorys = Category.objects.all()
+    return render(request, 'space_post/post_detail.html',
+                  {'post': post, 'popular_post_list': popular_post_list, 'categorys': categorys})
 
 
 def add_comment_to_post(request, pk):
+    popular_post_list = PopularPost.objects.all()
+    categorys = Category.objects.all()
     post = get_object_or_404(Article, pk=pk)
-    form = CommentForm() # Add commentを押した時はadd_comment_to_postがまだ開かれておらず、methodがPOSTと定まっていないので、下のif文は偽となる。その時用の初期値
+    form = CommentForm()  # Add commentを押した時はadd_comment_to_postがまだ開かれておらず、methodがPOSTと定まっていないので、下のif文は偽となる。その時用の初期値
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -28,8 +44,10 @@ def add_comment_to_post(request, pk):
             return redirect('post_detail', pk=post.pk)
         else:
             form = CommentForm()
-        return render(request, 'space_post/add_comment_to_post.html', {'form': form})
-    return render(request, 'space_post/add_comment_to_post.html', {'form': form})
+        return render(request, 'space_post/add_comment_to_post.html',
+                      {'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys})
+    return render(request, 'space_post/add_comment_to_post.html',
+                  {'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys})
 
 
 @login_required
