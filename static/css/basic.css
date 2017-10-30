@@ -143,6 +143,12 @@ body {
     text-align: center;
 }
 
+#popular_post_title{
+    font-size: 19px;
+    font-weight: bold;
+    color: #4d4d4f;
+}
+
 #popular_post > hr{
     height: 2px;
     border: none;
