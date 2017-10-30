@@ -1,9 +1,0 @@
-{% extends 'space_post/base.html' %}
-{% block content %}
-    <script type="text/javascript">document.title="{{ post.title }}";</script> <!-- タイトル変更 -->
-    <h1>New comment</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Send</button>
-    </form>
-{% endblock %}

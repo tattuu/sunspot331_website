@@ -1,5 +1,6 @@
 {% extends 'space_post/base.html' %}
 {% load static %}
+
 {% block content %}
     <script type="text/javascript">document.title="{{ post.title }}";</script> <!-- タイトル変更 -->
      <div id="article">
@@ -38,22 +39,25 @@
         <div class="clear"></div>
      </div>
     <hr>
-    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
 
-    {% for comment in post.comments.all %}
-        {% if user.is_authenticated or comment.approved_comment %}
-        <div class="comment">
-            <div class="date">
+        <button type="submit" class="save btn btn-default">送信</button>
+    </form>
+    <div class="container">
+        {% for comment in post.comments.all%}
+            {% if user.is_authenticated or comment.approved_comment %}
+            <div class="comment">
                 {{ comment.created_date }}<<strong>{{ comment.author }}</strong>>
                 {% if not comment.approved_comment %}
                     <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
                     <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
                 {% endif %}
+                <p>{{ comment.text|linebreaks }}</p>
             </div>
-            <p>{{ comment.text|linebreaks }}</p>
-        </div>
-        {% endif %}
-    {% empty %}
-        <p>まだコメントがありません。</p>
-    {% endfor %}
+            {% endif %}
+        {% empty %}
+            <p>まだコメントがありません。</p>
+        {% endfor %}
+    </div>
 {% endblock %}
