@@ -132,6 +132,12 @@ body {
     width: 600px;
 }
 
+#paging{
+    width: 600px;
+    text-align: center;
+    font-size: 30px;
+}
+
 #right_side_bar{
     width: 300px;
     height:2990px;

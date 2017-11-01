@@ -139,7 +139,7 @@ except ImportError:
     pass
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/pics/'
+MEDIA_URL = '/'
 MEDIA_ROOT = BASE_DIR
 
 STATICFILES_DIRS = ( # 開発サーバが見る静的ファイルのパス

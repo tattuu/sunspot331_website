@@ -3,7 +3,16 @@ from django.utils import timezone
 from .models import Article, Comment, PopularPost, Category
 from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+def _get_page(list_, page_no, count=6):
+    
+    paginator = Paginator(list_, count)
+    try:
+        page = paginator.page(page_no)
+    except (EmptyPage, PageNotAnInteger):
+        page = paginator.page(1)
+    return page
 
 def category(request, pk):
     pk_category = get_object_or_404(Category, pk=pk)
@@ -18,8 +27,12 @@ def post_list(request):
     posts = Article.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     popular_post_list = PopularPost.objects.all()
     categorys = Category.objects.all()
+    page = _get_page(Article.objects.all(), request.GET.get('page'))
+
+
+
     return render(request, 'space_post/post_list.html',
-                  {'posts': posts, 'popular_post_list': popular_post_list, 'categorys': categorys})
+                  {'posts': posts, 'popular_post_list': popular_post_list, 'categorys': categorys, 'page': page})
 
 
 def post_detail(request, pk):
@@ -55,3 +68,4 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+

@@ -12,6 +12,7 @@ class Category(models.Model):
 class Article(models.Model):
     category = models.ForeignKey('Category', related_name='categorys', null=True) # 後で管理画面からカテゴリを追加するので、初めは無くていい。
     author = models.ForeignKey('auth.User')
+    site_url = models.CharField(max_length=200)
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/media/')
     text = models.TextField()
