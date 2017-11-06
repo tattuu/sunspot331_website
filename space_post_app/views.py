@@ -24,10 +24,10 @@ def category(request, pk):
 
 
 def post_list(request):
-    posts = Article.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Article.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
     popular_post_list = PopularPost.objects.all()
     categorys = Category.objects.all()
-    page = _get_page(Article.objects.all(), request.GET.get('page'))
+    page = _get_page(posts, request.GET.get('page'))
 
 
 

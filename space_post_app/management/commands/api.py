@@ -43,6 +43,7 @@ def initialize_analyticsreporting():
 
 def get_report(analytics):
     # Use the Analytics Service Object to query the Analytics Reporting API V4.
+
     return analytics.reports().batchGet(
         body={
             'reportRequests': [
@@ -58,6 +59,17 @@ def get_report(analytics):
                     'dimensions': [
                         {'name': 'ga:pagePath'}, {'name': 'ga:pageTitle'}
                     ],
+                    'dimensionFilterClauses': [
+                        {
+                            'filters': [
+                                {
+                                    'dimensionName': 'ga:pagePath',
+                                    'operator': 'REGEXP',
+                                    'expressions': '^/post/[0-9]+/$'
+                                }
+                            ]
+                        }
+                    ],
                     'orderBys': [
                         {'fieldName': 'ga:pageviews', 'sortOrder': 'DESCENDING'},
                     ]
@@ -71,6 +83,7 @@ def get_10_popular():
     過去1週間の人気ページを10件返す
     URL, ページタイトル, PV数をyieldで返します
     """
+
     analytics = initialize_analyticsreporting()
     response = get_report(analytics)
     for report in response.get('reports', []):
