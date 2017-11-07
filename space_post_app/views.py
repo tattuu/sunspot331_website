@@ -18,7 +18,7 @@ def category(request, pk):
     pk_category = get_object_or_404(Category, pk=pk)
     popular_post_list = PopularPost.objects.all()
     categorys = Category.objects.all()
-    posts = Article.objects.filter(category__name__contains=pk_category).filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Article.objects.filter(category__name__contains=pk_category).filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
     return render(request, 'space_post/post_category.html',
                   {'posts': posts, 'popular_post_list': popular_post_list, 'categorys': categorys, 'pk_category': pk_category})
 
