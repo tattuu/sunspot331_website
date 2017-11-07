@@ -37,6 +37,7 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Article, pk=pk)
+    comments = post.comments.order_by('created_date').reverse()
     popular_post_list = PopularPost.objects.all()
     categorys = Category.objects.all()
     form = CommentForm()
@@ -47,13 +48,13 @@ def post_detail(request, pk):
             comment.post = post
             comment.save()
             return render(request, 'space_post/post_detail.html',
-                          {'post': post, 'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys})
+                          {'post': post, 'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys, 'comments' : comments})
         else:
             form = CommentForm()
         return render(request, 'space_post/post_detail.html',
-                      {'post': post, 'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys})
+                      {'post': post, 'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys, 'comments' : comments})
     return render(request, 'space_post/post_detail.html',
-                  {'post': post, 'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys})
+                  {'post': post, 'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys, 'comments' : comments})
 
 
 @login_required

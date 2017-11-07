@@ -156,11 +156,6 @@ body {
     color: #4d4d4f;
 }
 
-.container { /* コメントを最新コメント順にするためにflexboxの使用 */
-  display: flex;
-  flex-direction: column-reverse;
-}
-
 .comment {
     margin: 20px 0px 20px 20px;
     width: 550px;
