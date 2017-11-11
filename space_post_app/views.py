@@ -56,14 +56,6 @@ def post_detail(request, pk):
     return render(request, 'space_post/post_detail.html',
                   {'post': post, 'form': form, 'popular_post_list': popular_post_list, 'categorys': categorys, 'comments' : comments})
 
-
-@login_required
-def comment_approve(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
-    comment.approve()
-    return redirect('post_detail', pk=comment.post.pk)
-
-
 @login_required
 def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)

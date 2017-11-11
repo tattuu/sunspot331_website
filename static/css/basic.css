@@ -106,6 +106,7 @@ body {
 }
 
 #article_footer{
+    height:60px;
     width: auto;
     margin-left: 85px;
     margin-right: 30px;
@@ -115,7 +116,11 @@ body {
     width: 295px;
     line-height: 0;
     float: left;
-    margin-top: 30px;
+    padding-top: 10px;
+    margin-top: 0;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 5px 12px;
 }
 
 .article_footer_under{
@@ -124,7 +129,11 @@ body {
 }
 
 #article_footer > a{
-    margin-left: 85px;
+    margin-left: 70px;
+}
+
+.category_border{
+    border: solid 1px;
 }
 
 #article_block{
