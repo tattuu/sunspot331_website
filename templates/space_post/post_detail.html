@@ -41,10 +41,11 @@
      </div>
     <hr>
     <form method="POST">{% csrf_token %}
-        {{ form.author }}
-        {{ form.text }}
-
-        <button type="submit" class="save btn btn-default">送信</button>
+        名前：{{ form.author }}<br>
+        {{ form.text }}<br>
+        <div id="form_button_margin_left">
+            <button type="submit" class="save btn btn-default" style="width: 100px; height: 50px"><strong>投稿</strong></button>
+        </div>
     </form>
     {% for comment in comments.all%}
         <div class="comment">

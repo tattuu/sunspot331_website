@@ -185,6 +185,17 @@ body{
     color: #4d4d4f;
 }
 
+textarea{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 150px;
+    width: 500px;
+}
+
+#form_button_margin_left{
+    margin-left: 400px;
+}
+
 .comment {
     margin: 20px 0px 20px 20px;
     width: 550px;
