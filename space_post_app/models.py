@@ -32,7 +32,7 @@ class Article(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey('Article', related_name='comments')
-    author = models.CharField(max_length=200)
+    author = models.CharField(max_length=200, default="名無し")
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=True)
