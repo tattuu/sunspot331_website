@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ba7ed78-ec3b-4b88-bbd7-21867e612e8b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/space_post/base.html" afterPath="$PROJECT_DIR$/templates/space_post/base.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +20,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/space_post_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
+            <state relative-caret-position="0">
               <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
               <folding />
             </state>
@@ -40,8 +40,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/space_post/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+            <state relative-caret-position="220">
+              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -370,7 +370,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/space_post_app/management/__init__.py" />
     <entry file="file://$PROJECT_DIR$/space_post_app/management/commands/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -542,7 +541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/space_post_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="0">
           <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
           <folding />
         </state>
@@ -572,10 +571,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/media/site_logo.PNG">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/space_post/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        <state relative-caret-position="220">
+          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding />
         </state>
       </provider>
