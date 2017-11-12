@@ -21,77 +21,55 @@
         </script>
     </head>
     <body>
-        {% for data in page %}
-        <p>{{ data.message }}</p>
-        <p>{{ data.created_at }}</p>
-        <p>{{ data.updated_at }}</p>
-        {% endfor %}
-
-        <!-- 前へ の部分 -->
-        {% if page.has_previous %}
-          <a href="?page={{ page.previous_page_number }}">前へ</a>
-        {% endif %}
-
-        <!-- 数字の部分 -->
-        {% for num in page.paginator.page_range %}
-          {% if page.number == num %}
-            <span>{{ num }}</span>
-          {% else %}
-            <a href="?page={{ num }}">{{ num }}</a>
-          {% endif %}
-        {% endfor %}
-
-        <!-- 次へ の部分 -->
-        {% if page.has_next %}
-          <a href="?page={{ page.next_page_number }}">次へ</a>
-        {% endif %}
-        <div id="fb-root"></div> <!-- facebookの共有ボタンのためのおまじない -->
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10';
-            fjs.parentNode.insertBefore(js, fjs);
-         }(document, 'script', 'facebook-jssdk'));</script>
-        <div id="header"> <!-- ヘッダー部分 -->
-            <div id="header_title">
-                <a href="/">Sunspot331</a> <!-- サンスポット(黒点)331 -->
-            </div>
-        </div>
-         <div id="contents">
-            <div id="right_side_bar">
-                <div class="popular_post_and_category">
-                    <hr class="sidebar_hr_size">
-                    <p class="popular_post_and_category_title">過去1週間の人気ページ</p>
-                    {% for popular in popular_post_list %}
-                        <p>
-                            {{ forloop.counter }}位：{{ popular.page_view }}View<br>
-                            <a href="{{ popular.url }}">{{ popular.title }}</a>
-                        </p>
-                        {% if not forloop.last %}
-                            <hr id="popular_hr">
-                        {% endif %}
-                    {% endfor %}
-                    <hr class="sidebar_hr_size">
+        <div id="wrap">
+            <div id="fb-root"></div> <!-- facebookの共有ボタンのためのおまじない -->
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10';
+                fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));</script>
+            <div id="header"> <!-- ヘッダー部分 -->
+                <div id="header_title">
+                    <a href="/">Sunspot331</a> <!-- サンスポット(黒点)331 -->
                 </div>
-                <div class="popular_post_and_category">
-                    <p class="popular_post_and_category_title">カテゴリー</p>
-                    <div id="link_underbar_delete">
-                        {% for category in categorys %}
-                            <a href="{% url 'category' pk=category.pk %}" class="square_btn">{{ category.name }}</a>
+            </div>
+             <div id="contents">
+                <div id="right_side_bar">
+                    <div class="popular_post_and_category">
+                        <hr class="sidebar_hr_size">
+                        <p class="popular_post_and_category_title">過去1週間の人気ページ</p>
+                        {% for popular in popular_post_list %}
+                            <p>
+                                {{ forloop.counter }}位：{{ popular.page_view }}View<br>
+                                <a href="{{ popular.url }}">{{ popular.title }}</a>
+                            </p>
+                            {% if not forloop.last %}
+                                <hr id="popular_hr">
+                            {% endif %}
                         {% endfor %}
+                        <hr class="sidebar_hr_size">
                     </div>
-                    <hr class="sidebar_hr_size">
+                    <div class="popular_post_and_category">
+                        <p class="popular_post_and_category_title">カテゴリー</p>
+                        <div id="link_underbar_delete">
+                            {% for category in categorys %}
+                                <a href="{% url 'category' pk=category.pk %}" class="square_btn">{{ category.name }}</a>
+                            {% endfor %}
+                        </div>
+                        <hr class="sidebar_hr_size">
+                    </div>
+                </div>
+                <div id="article_block">
+                    {% block content %}
+                    {% endblock %}
                 </div>
             </div>
-            <div id="article_block">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
-        <div id="footer">
+            <div id="footer">
 
+            </div>
         </div>
     </body>
 </html>
