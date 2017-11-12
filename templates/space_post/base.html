@@ -29,19 +29,21 @@
     <body>
         <div id="wrap">
             <div id="fb-root"></div> <!-- facebookの共有ボタンのためのおまじない -->
-            <script>(function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.11&appId=2039148366321932';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
             <div id="header"> <!-- ヘッダー部分 -->
                 <div id="header_title">
                     <a href="/">Sunspot331</a> <!-- サンスポット(黒点)331 -->
                 </div>
-                <a class="fb btn" href="http://www.facebook.com/share.php?u=https://sunspot331.herokuapp.com/" onclick="window.open(this.href, 'FBwindow', 'width=636, height=200, menubar=no, toolbar=no, scrollbars=yes'); return false;">Facebookでシェアする</a>
-            </div>
+                <!--<a class="fb btn" href="http://www.facebook.com/share.php?u=https://sunspot331.herokuapp.com/" onclick="window.open(this.href, 'FBwindow', 'width=auto, height=auto, menubar=no, toolbar=no, scrollbars=yes'); return false;">Facebookでシェアする</a>-->
+                <div class="fb-share-button" data-href="https://sunspot331.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunspot331.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div>
+             </div>
              <div id="contents">
                 <div id="right_side_bar">
                     <div class="popular_post_and_category">
