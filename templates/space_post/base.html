@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-     <head>
+     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -19,22 +19,27 @@
 
         gtag('config', 'UA-108434661-1');
         </script>
+        <meta property="og:title" content"Sun" />
+        <meta property="og:description" content="いいねしてね。" />
+        <meta property="og:image" content="{% static 'media/favicon.ico' %}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sunspot331.herokuapp.com/" />
     </head>
     <body>
         <div id="wrap">
             <div id="fb-root"></div> <!-- facebookの共有ボタンのためのおまじない -->
             <script>(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10';
-                fjs.parentNode.insertBefore(js, fjs);
-             }(document, 'script', 'facebook-jssdk'));</script>
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
             <div id="header"> <!-- ヘッダー部分 -->
                 <div id="header_title">
                     <a href="/">Sunspot331</a> <!-- サンスポット(黒点)331 -->
                 </div>
+                <a class="fb btn" href="http://www.facebook.com/share.php?u=https://sunspot331.herokuapp.com/" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">Facebookでシェアする</a>
             </div>
              <div id="contents">
                 <div id="right_side_bar">
