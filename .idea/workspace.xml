@@ -36,13 +36,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/space_post/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="42" column="176" lean-forward="false" selection-start-line="42" selection-start-column="176" selection-end-line="42" selection-end-column="176" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site_logo.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/media/site_logo.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -547,17 +554,17 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/media/site_logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/space_post/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="42" column="176" lean-forward="false" selection-start-line="42" selection-start-column="176" selection-end-line="42" selection-end-column="176" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/media/site_logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
