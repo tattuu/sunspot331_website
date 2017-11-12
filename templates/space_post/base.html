@@ -29,21 +29,25 @@
     <body>
         <div id="wrap">
             <div id="fb-root"></div> <!-- facebookの共有ボタンのためのおまじない -->
-
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.11&appId=2039148366321932';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.11&appId=2039148366321932';
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
             <div id="header"> <!-- ヘッダー部分 -->
                 <div id="header_title">
                     <a href="/">Sunspot331</a> <!-- サンスポット(黒点)331 -->
                 </div>
-                <!--<a class="fb btn" href="http://www.facebook.com/share.php?u=https://sunspot331.herokuapp.com/" onclick="window.open(this.href, 'FBwindow', 'width=auto, height=auto, menubar=no, toolbar=no, scrollbars=yes'); return false;">Facebookでシェアする</a>-->
-                <div class="fb-share-button" data-href="https://sunspot331.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunspot331.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div>
-             </div>
+                <table class="share_table">
+                <tr>
+                    <td><div class="fb-share-button" data-href="https://sunspot331.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunspot331.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div><td>
+                    <td><a href="http://twitter.com/share?url=https://sunspot331.herokuapp.com/&text=宇宙に関するニュースのまとめサイトです。" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><td>
+                    <td><a href="http://b.hatena.ne.jp/entry/s/sunspot331.herokuapp.com/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></td>
+                <tr>
+                </table>
+            </div>
              <div id="contents">
                 <div id="right_side_bar">
                     <div class="popular_post_and_category">
