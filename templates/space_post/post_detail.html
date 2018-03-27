@@ -6,40 +6,43 @@
      <div id="article">
         <div id="not_footer">
             <div id="article_header">
-                 <p>published: {{ post.published_date.date }}<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a></p>
+                 <p>published: {{ post.published_date.date }}<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a></p>  <!-- その記事の公開日とコメント数を表示 -->
             </div>
             <div id="article_title">
-                <a href="{{ post.site_url }}" target="_blank">{{ post.title }}</a>
+                <a href="{{ post.site_url }}" target="_blank">{{ post.title }}</a>  <!-- その記事のタイトルを表示 -->
                 <hr>
             </div>
+            <!-- 記事のタイトル部分 -->
             <div id="article_contents">
-                <img src="{{ post.image.url }}"/>
-                {% if post.title|length <= 28 %}
-                    <div id="article_text1" >
-                        {{ post.text|linebreaks }}
-                    </div>
-                {% else %}
-                    <div id="article_text2">
-                        {{ post.text|linebreaks }}
-                    </div>
-                {% endif %}
-            </div>
+                 <img src="{{ post.image.url }}"/>
+                 {% if post.title|length <= 28 %} <!-- 改行されない場合、2行分の幅を取る -->
+                     <div id="article_text1" >
+                         {{ post.text|linebreaks }}
+                     </div>
+                 {% else %}
+                     <div id="article_text2">
+                         {{ post.text|linebreaks }}
+                     </div>
+                 {% endif %}
+             </div>
         </div>
         <div id="article_footer">
             <table>
             <tr>
-                <td><a href="{% url 'category' pk=post.category.pk %}">{{ post.category }}</a><strong>;</strong></td>
+                <td><a href="{% url 'category' pk=post.category.pk %}">{{ post.category }}</a><strong>;</strong></td> <!-- その記事のカテゴリー表示 -->
             </tr>
+            <!-- シェアボタン関連 -->
             <tr>
                 <td id="twitter_margin_right"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></td>
                 <td><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></td>
             </tr>
             </table>
-            <a href="{{ post.site_url }}" target="_blank"><img src="{% static 'media/next_button.png' %}" width="100px" height="50px"/></a>
+            <a href="{{ post.site_url }}" target="_blank"><img src="{% static 'media/next_button.png' %}" width="100px" height="50px"/></a> <!-- →ボタンを押した場合は、リンク先に飛ぶ -->
         </div>
         <div class="clear"></div>
      </div>
     <hr>
+    <!-- コメント関連 -->
     <form method="POST">{% csrf_token %}
         名前：{{ form.author }}<br>
         {{ form.text }}<br>
@@ -47,15 +50,15 @@
             <button type="submit" class="save btn btn-default" style="width: 100px; height: 50px"><strong>投稿</strong></button>
         </div>
     </form>
-    {% for comment in comments.all%}
+    {% for comment in comments.all%} <!-- コメントがあれば全てのコメントを表示 -->
         <div class="comment">
             {{ comment.created_date }}<<strong>{{ comment.author }}</strong>>
-                {% if user.is_authenticated %}
+                {% if user.is_authenticated %} <!-- 管理人であれば削除可能 -->
                     <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
                 {% endif %}
             <p>{{ comment.text|linebreaks }}</p>
         </div>
-    {% empty %}
+    {% empty %} <!-- コメントが無ければ何も表示しない -->
         <p>まだコメントがありません。</p>
     {% endfor %}
 {% endblock %}

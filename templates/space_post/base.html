@@ -3,8 +3,8 @@
      <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
         <meta charset="utf-8"/>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <!-- bootstrap(デザイン関連) -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> <!-- bootstrap(デザイン関連) -->
         <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="icon" href="{% static 'media/favicon.ico' %}" type="image/x-icon" />
         <script type="text/javascript" src="{% static 'js/article_text_line_judge.js' %}"></script>
@@ -19,6 +19,7 @@
 
         gtag('config', 'UA-108434661-1');
         </script>
+        <!-- fb関連 -->
         <meta property="og:title" content="Sunspot331" />
         <meta property="og:description" content="宇宙に関するニュースのまとめサイトです。" />
         <meta property="og:image" content="https://sunspot331.herokuapp.com/static/media/logo_for_facebook.PNG" />
@@ -40,6 +41,7 @@
                 <div id="header_title">
                     <a href="/">Sunspot331</a> <!-- サンスポット(黒点)331 -->
                 </div>
+                <!-- シェアボタン関連 -->
                 <table class="share_table">
                 <tr>
                     <td><div class="fb-share-button" data-href="https://sunspot331.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunspot331.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div><td>
@@ -48,15 +50,16 @@
                 <tr>
                 </table>
             </div>
+            <!-- ライトサイドバー -->
              <div id="contents">
                 <div id="right_side_bar">
                     <div class="popular_post_and_category">
                         <hr class="sidebar_hr_size">
                         <p class="popular_post_and_category_title">過去1週間の人気ページ</p>
-                        {% for popular in popular_post_list %}
+                        {% for popular in popular_post_list %} <!-- popular_post_listから、人気順で抽出 -->
                             <p>
-                                {{ forloop.counter }}位：{{ popular.page_view }}View<br>
-                                <a href="{{ popular.url }}">{{ popular.title }}</a>
+                                {{ forloop.counter }}位：{{ popular.page_view }}View<br> <!-- 順位とビュー数表示 -->
+                                <a href="{{ popular.url }}">{{ popular.title }}</a> <!-- 記事タイトル表示 -->
                             </p>
                             {% if not forloop.last %}
                                 <hr id="popular_hr">
@@ -67,8 +70,8 @@
                     <div class="popular_post_and_category">
                         <p class="popular_post_and_category_title">カテゴリー</p>
                         <div id="link_underbar_delete">
-                            {% for category in categorys %}
-                                <a href="{% url 'category' pk=category.pk %}" class="square_btn">{{ category.name }}</a>
+                            {% for category in categorys %} <!-- categorysから一つカテゴリーに関する情報をを抽出 -->
+                                <a href="{% url 'category' pk=category.pk %}" class="square_btn">{{ category.name }}</a> <!-- categoryに格納されているカテゴリー名を表示 -->
                             {% endfor %}
                         </div>
                         <hr class="sidebar_hr_size">

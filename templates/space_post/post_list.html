@@ -2,16 +2,17 @@
 {% load static %}
 {% block content %}
 
-    {% for post in page %}
+    {% for post in page %} <!-- 一ページ分の記事を取得しているpageから記事を一つづつ取得 -->
         <div id="article">
             <div id="not_footer">
                 <div id="article_header">
-                    <p>published: {{ post.published_date.date }}<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a></p>
+                    <p>published: {{ post.published_date.date }}<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a></p> <!-- その記事の公開日とコメント数を表示 -->
                 </div>
                 <div id="article_title">
-                    <a href="{% url 'post_detail'  pk=post.pk %}">{{ post.title }}</a>
+                    <a href="{% url 'post_detail'  pk=post.pk %}">{{ post.title }}</a> <!-- その記事のタイトルを表示 -->
                     <hr>
                 </div>
+                <!-- その記事のタイトル表示 -->
                 <div id="article_contents">
                     <img src="{{ post.image.url }}"/>
                     {% if post.title|length <= 28 %}
